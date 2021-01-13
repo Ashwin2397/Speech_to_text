@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Ashwin2397/Speech_to_text#readme",
   "dependencies": {
+    "@google-cloud/speech": "^4.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1"
   },
