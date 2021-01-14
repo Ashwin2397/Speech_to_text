@@ -2,3 +2,10 @@
 # Config files
 .vscode/
 node_modules/
+debug.log
+
+# Resources folder 
+resources/
+
+# API keys
+Speech_to_text*
