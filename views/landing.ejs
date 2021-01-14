@@ -1,1 +1,17 @@
-<h1>Hello World</h1>
+<%- include("partials/header") %>
+<h1>Speech to Text Engine</h1>
+
+<button type="button" class="btn btn-primary">Start Recording</button>
+
+<button type="button" class="btn btn-primary">Stop Recording</button>
+
+<% if(recorded){ %>
+<div>
+    <h2>Output</h2>
+    <p>
+        <%=output%>
+    </p>
+</div>
+<% } %>
+
+<%- include("partials/footer") %>
