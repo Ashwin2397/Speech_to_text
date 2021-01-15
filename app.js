@@ -47,7 +47,7 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
 
     console.log("HI");
-    res.status(200);
+    res.send("HI");
 });
 // To store uploads
 // app.post("/",upload.single('audio'),function(req,res){
