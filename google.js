@@ -13,7 +13,7 @@ async function main(){
     // Constants
     const sampleRateHertz = 16000,
           languageCode    = 'en-US',
-          filename        = "./public/uploads/output2.raw", //'Local path to audio file, e.g. /path/to/audio.raw';
+          filename        = "./public/uploads/output_3.raw", //'Local path to audio file, e.g. /path/to/audio.raw';
           encoding        = 'LINEAR16';
     
     // Creates a client
@@ -25,7 +25,7 @@ async function main(){
     
     // (async () => {
         
-    await linear16('./public/uploads/blob.wav', './public/uploads/output2.raw')
+    await linear16('./public/uploads/blob.wav', './public/uploads/output_3.raw')
         .then(   async function(){
             
             // Read file and convert to base64 string

@@ -82,7 +82,7 @@ app.post("/",upload.single('audio'),function(req,res){
 var port = process.env.PORT || 1234,
     host = process.env.IP || "localhost";   
 
-app.listen(port, function(){
+app.listen(process.env.PORT, function(){
 
     console.log("[STARTING] Server is starting ...");
     console.log(`[LISTENING] Server is listening ...`);
