@@ -44,30 +44,38 @@ app.get("/",function(req,res){
 
 });
 
+app.get("/redir",function(req,res){
+
+    res.render("redir");
+
+});
+
+
 // To store uploads
 app.post("/",upload.single('audio'),function(req,res){
 
+    res.redirect("/redir");
 
-    var get_transcript = async () =>{
+    // var get_transcript = async () =>{
 
-        var result = await google();
-        return result;
+    //     var result = await google();
+    //     return result;
 
-    }
+    // }
 
     
 
-    get_transcript()
-        .then((transcript) => {
+    // get_transcript()
+    //     .then((transcript) => {
 
-            recorded = true;
-            output = transcript;
+    //         recorded = true;
+    //         output = transcript;
             
-            console.log(transcript);
+    //         console.log(transcript);
             
-        });
+    //     });
 
-    res.status(200);
+    // res.status(200);
     
     
 });
