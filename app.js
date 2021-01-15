@@ -63,8 +63,6 @@ app.post("/",upload.single('audio'),function(req,res){
 
     }
 
-    
-
     get_transcript()
         .then((transcript) => {
 
@@ -73,6 +71,10 @@ app.post("/",upload.single('audio'),function(req,res){
             
             console.log(transcript);
             
+        })
+        .catch((err) => {
+
+            res.status(200);
         });
 
     res.status(200);
