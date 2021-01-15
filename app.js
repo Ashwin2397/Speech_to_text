@@ -1,7 +1,6 @@
 var body_parser = require("body-parser"),
     express     = require("express"),
     google      = require('./google'),
-    dotenv      = require('dotenv').config(),
     multer      = require('multer'),
     app         = express(),
     fs          = require('fs');
