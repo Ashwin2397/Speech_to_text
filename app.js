@@ -9,6 +9,10 @@ var body_parser = require("body-parser"),
 
 /* CONFIGURATIONS */
 
+// Enable remote hosting
+var port = process.env.PORT || 1234,
+    host = process.env.IP || "localhost";
+
 // Configure multer
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -69,9 +73,7 @@ app.post("/",upload.single('audio'),function(req,res){
     
 });
 
-
-
-app.listen(1234,"localhost",function(){
+app.listen(port,host,function(){
 
     console.log("[STARTING] Server is starting ...");
     console.log("[LISTENING] Server is listening ...");
