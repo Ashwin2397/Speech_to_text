@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
     },
     filename: function(req, file, cb) {
 
-        cb(null,"blob.wav");
+        cb(null,"audio.wav");
 
     }
   });
@@ -44,11 +44,21 @@ app.get("/",function(req,res){
 
 });
 
-app.get("/redir",function(req,res){
+/* DEBUGGING */
+app.get("/audio",function(req,res){
 
     res.render("redir");
 
 });
+
+
+
+app.post("/audio",upload.single('audio'),function(req,res){
+
+    res.status(200);
+
+});
+
 
 
 // To store uploads
@@ -82,7 +92,7 @@ app.post("/",upload.single('audio'),function(req,res){
 var port = process.env.PORT || 1234,
     host = process.env.IP || "localhost";   
 
-app.listen(process.env.PORT, function(){
+app.listen(port, function(){
 
     console.log("[STARTING] Server is starting ...");
     console.log(`[LISTENING] Server is listening ...`);

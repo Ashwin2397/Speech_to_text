@@ -52,7 +52,10 @@ end_btn.onclick = function(){
         
         let fd = new FormData();
         fd.append("audio",file_blob);
-
+        
+        // This releases the mic
+        mic.stop();
+        
         axios({
             url:"/",
             method:"POST",
@@ -63,8 +66,6 @@ end_btn.onclick = function(){
 
     });
 
-    // This releases the mic
-    mic.stop();
 
 }
 
