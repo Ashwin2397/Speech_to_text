@@ -10,3 +10,5 @@ public/uploads/
 
 # API keys
 Speech_to_text*
+
+.env
