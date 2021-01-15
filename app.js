@@ -65,8 +65,6 @@ app.post("/",upload.single('audio'),function(req,res){
             
             console.log(transcript);
             
-            res.render("landing",{recorded:recorded, output:output});
-
         });
 
     res.status(200);
