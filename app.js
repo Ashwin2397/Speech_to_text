@@ -72,10 +72,7 @@ app.post("/",upload.single('audio'),function(req,res){
             console.log(transcript);
             
         })
-        .catch((err) => {
-
-            res.status(200);
-        });
+        
 
     res.status(200);
     
@@ -85,7 +82,7 @@ app.post("/",upload.single('audio'),function(req,res){
 var port = process.env.PORT || 1234,
     host = process.env.IP || "localhost";   
 
-app.listen(process.env.PORT, function(){
+app.listen(port, function(){
 
     console.log("[STARTING] Server is starting ...");
     console.log(`[LISTENING] Server is listening ...`);
