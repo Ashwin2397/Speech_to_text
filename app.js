@@ -44,33 +44,38 @@ app.get("/",function(req,res){
 
 });
 
-// To store uploads
-app.post("/",upload.single('audio'),function(req,res){
+app.post("/",function(req,res){
 
-
-    var get_transcript = async () =>{
-
-        var result = await google();
-        return result;
-
-    }
-
-    
-
-    get_transcript()
-        .then((transcript) => {
-
-            recorded = true;
-            output = transcript;
-            
-            console.log(transcript);
-            
-        });
-
+    console.log("HI");
     res.status(200);
-    
-    
 });
+// To store uploads
+// app.post("/",upload.single('audio'),function(req,res){
+
+
+//     var get_transcript = async () =>{
+
+//         var result = await google();
+//         return result;
+
+//     }
+
+    
+
+//     get_transcript()
+//         .then((transcript) => {
+
+//             recorded = true;
+//             output = transcript;
+            
+//             console.log(transcript);
+            
+//         });
+
+//     res.status(200);
+    
+    
+// });
 
 var port = process.env.PORT || 1234,
     host = process.env.IP || "localhost";   
