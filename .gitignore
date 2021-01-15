@@ -8,6 +8,6 @@ debug.log
 resources/
 
 # API keys
-# Speech_to_text*
+Speech_to_text*
 
-# .env
+.env
