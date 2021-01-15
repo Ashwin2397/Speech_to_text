@@ -70,11 +70,12 @@ app.post("/",upload.single('audio'),function(req,res){
 });
 
 var port = process.env.PORT || 1234,
-    host = process.env.IP || "localhost";
-app.listen(port, host, function(){
+    host = process.env.IP || "localhost";   
+
+app.listen(process.env.PORT, function(){
 
     console.log("[STARTING] Server is starting ...");
-    console.log(`[LISTENING] Server is listening on PORT:${port} HOST:${host}`);
+    console.log(`[LISTENING] Server is listening ...`);
 
 
 });
