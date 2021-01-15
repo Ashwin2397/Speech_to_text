@@ -54,7 +54,7 @@ end_btn.onclick = function(){
         fd.append("audio",file_blob);
 
         axios({
-            url:"/post",
+            url:"/",
             method:"POST",
             data: fd
         }).then(

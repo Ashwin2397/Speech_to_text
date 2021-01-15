@@ -45,7 +45,7 @@ app.get("/",function(req,res){
 });
 
 // To store uploads
-app.post("/post",upload.single('audio'),function(req,res){
+app.post("/",upload.single('audio'),function(req,res){
 
 
     var get_transcript = async () =>{

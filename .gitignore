@@ -6,7 +6,6 @@ debug.log
 
 # Resources folder 
 resources/
-public/uploads/
 
 # API keys
 # Speech_to_text*
