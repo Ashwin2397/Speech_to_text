@@ -3,11 +3,16 @@ var body_parser = require("body-parser"),
     dotenv   = require('dotenv').config(), 
     google      = require('./google'),
     multer      = require('multer'),
+    cors        = require('cors'), // Cross origin request support to allow axios
     app         = express(),
     fs          = require('fs');
 
 
+    
 /* CONFIGURATIONS */
+
+// Enable cors
+app.use(cors())
 
 // Configure multer
 const storage = multer.diskStorage({
