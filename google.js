@@ -4,7 +4,10 @@ var linear16 = require('linear16'), // Encodes supplied file to adhere to "LINEA
     {exit}   = require('process'),
     fs       = require('fs'); // File system module
 
+    // if(process.env.NODE_ENV !== "production"){
 
+    //     require('dotenv').config(); 
+    // }
 async function main(){
     
     // Constants

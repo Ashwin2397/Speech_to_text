@@ -1,5 +1,6 @@
 var body_parser = require("body-parser"),
     express     = require("express"),
+    dotenv   = require('dotenv').config(), 
     google      = require('./google'),
     multer      = require('multer'),
     app         = express(),
@@ -68,9 +69,12 @@ app.post("/",upload.single('audio'),function(req,res){
     
 });
 
-app.listen(process.env.PORT || 1234, process.env.IP || "localhost", function(){
+var port = process.env.PORT || 1234,
+    host = process.env.IP || "localhost";
+app.listen(port, host, function(){
 
     console.log("[STARTING] Server is starting ...");
-    console.log("[LISTENING] Server is listening ...");
+    console.log(`[LISTENING] Server is listening on PORT:${port} HOST:${host}`);
+
 
 });
