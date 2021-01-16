@@ -64,7 +64,7 @@ app.post("/",upload.single('audio'),function(req,res){
             
             console.log(transcript);
             
-            res.status(200);
+            res.redirect("/");
         })
         
 

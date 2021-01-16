@@ -62,14 +62,13 @@ end_btn.onclick = function(){
             url:"/",
             method:"POST",
             data: fd
-        })
-            .then(
-                res => {
-                    console.log(res);
-                    
-                    window.location.href = "/";
+        }).then(
+            res => {
                 
-                });
+                console.log(res);
+                sleep(2000);
+                window.location.href = "/";
+            });
 
 
         
@@ -80,10 +79,19 @@ end_btn.onclick = function(){
 }
 
 function blobToFile(theBlob, fileName){
-
+/* 
+* Converts blob to file but adding the necessary attributes.
+*/
     //A Blob() is almost a File() - it's just missing the two properties below which we will add
     theBlob.lastModifiedDate = new Date();
     theBlob.name = fileName;
     
     return theBlob;
 }
+
+function sleep(ms) {
+/* 
+* Simulates sleep
+*/    
+    return new Promise(resolve => setTimeout(resolve, ms));
+ }
