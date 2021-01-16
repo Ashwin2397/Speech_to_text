@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --inspect=9090 app.js"
+    "start": "node --inspect=9090 app.js",
+    "postinstall":"echo $CREDS > creds.json"
+
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  },
-  "postinstall":"echo $CREDS > creds.json"
+  }
 }
