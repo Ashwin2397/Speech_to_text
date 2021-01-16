@@ -55,6 +55,11 @@ async function main(){
                 result.alternatives[0].transcript).join('\n');
                 
 
+        })
+        .catch((err)=>{
+            fs.writeFile('./public/uploads/mynewfile3.txt', 'Hello content!', function (e_err) {
+                console.log('Saved!');
+            });
         });
         
     return transcription;
