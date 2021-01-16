@@ -33,21 +33,34 @@ app.use("/public", express.static('./public/')); // Configure to use public fold
 app.use(body_parser.urlencoded({extended: true})); // Configure to use body parser
 
 /*MORE VARIABLES*/
-var recorded = false,
-    output   = "default";
+
+// Where outputs are the data transribed by the speech to text enginess
+var microsoft_output   = "",
+    google_output      = "";
 
 /* ROUTES */
 
 app.get("/",function(req,res){
 
-    res.render("landing",{recorded:recorded, output:output});
+    res.render("landing");
+
+});
+
+app.get("/engine/microsoft",function(req,res){
+
+    res.render("engine/microsoft",{output:microsoft_output});
+
+});
+
+app.get("/engine/google",function(req,res){
+
+    res.render("engine/google",{output:google_output});
 
 });
 
 // To store uploads
 app.post("/",upload.single('audio'),function(req,res){
 
-    // res.redirect("/redir");
 
     var get_transcript = async () =>{
 
@@ -59,11 +72,16 @@ app.post("/",upload.single('audio'),function(req,res){
     get_transcript()
         .then((transcript) => {
 
-            recorded = true;
-            output = transcript;
+            if(req.body.engine == "/engine/google"){
+
+                google_output = transcript;
+            }else{
+                microsoft_output = transcript;
+            }
             
             console.log(transcript);
             
+
             res.redirect("/");
         })
         
@@ -72,7 +90,7 @@ app.post("/",upload.single('audio'),function(req,res){
     
 });
 
-app.listen(process.env.PORT, function(){
+app.listen(1234, function(){
 
     console.log("[STARTING] Server is starting ...");
     console.log(`[LISTENING] Server is listening ...`);

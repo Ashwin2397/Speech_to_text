@@ -1,21 +1,10 @@
 <%- include("partials/header") %>
-<h1>Speech to Text Engine</h1>
 
+<div class="container headerC text-center align-middle">
+    <h1 id="headerText"><strong>Welcome to the speech to text engine tester</strong></h1>
+    <a class="btn btn-lg btn-default btn-success" href="/engine/microsoft">Microsoft</a>
+    <a class="btn btn-lg btn-default btn-success" href="/engine/google">Google</a>
 
-<button id="btn-start-recording" class="btn btn-primary">Start Recording</button>
-<button id="btn-stop-recording" class="btn btn-primary" >Stop Recording</button>
-
-
-<% if(recorded){ %>
-<div>
-    <h2>Output</h2>
-    <p>
-        <%=output%>
-    </p>
 </div>
-<% } %>
-
-
-<script src="../public/js/recorder.js"></script>
 
 <%- include("partials/footer") %>
