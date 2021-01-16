@@ -27,7 +27,7 @@ async function main(){
     
     //requiring path and fs modules
 //joining path of directory 
-const directoryPath = path.join(__dirname, 'Documents');
+const directoryPath = path.join(__dirname, 'public','uploads');
 //passsing directoryPath and callback function
 fs.readdir(directoryPath, function (err, files) {
     //handling error
