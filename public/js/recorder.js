@@ -52,6 +52,8 @@ end_btn.onclick = function(){
         
         let fd = new FormData();
         fd.append("audio",file_blob);
+
+        
         
         // This releases the mic
         mic.stop();

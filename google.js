@@ -8,16 +8,13 @@ var linear16 = require('linear16'), // Encodes supplied file to adhere to "LINEA
 
     //     require('dotenv').config(); 
     // }
-console.log(__dirname);
-
-exit();
 
 async function main(){
     
     // Constants
     const sampleRateHertz = 16000,
           languageCode    = 'en-US',
-          filename        = __dirname+"/public/uploads/output_3.raw", //'Local path to audio file, e.g. /path/to/audio.raw';
+          filename        = `${__dirname}/public/uploads/output_3.raw`, //'Local path to audio file, e.g. /path/to/audio.raw';
           encoding        = 'LINEAR16';
     
     // Creates a client
@@ -29,7 +26,7 @@ async function main(){
     
     // (async () => {
         
-    await linear16(__dirname+'/public/uploads/blob.wav', filename)
+    await linear16(`${__dirname}/public/uploads/blob.wav`, filename)
         .then(   async function(){
             
             // Read file and convert to base64 string
