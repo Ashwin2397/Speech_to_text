@@ -26,6 +26,8 @@ async function main(){
     var transcription;
     
     //requiring path and fs modules
+
+console.log("BEFORE LINEAR16");
 //joining path of directory 
 const directoryPath = path.join(__dirname, 'public','uploads');
 //passsing directoryPath and callback function
@@ -77,7 +79,26 @@ fs.readdir(directoryPath, function (err, files) {
         .catch((err)=>{
            console.log("An error just occurred, either with google or with linear16 ");
         });
-        
+    
+    
+console.log("AFTER LINEAR16");
+//joining path of directory 
+const directoryPath = path.join(__dirname, 'public','uploads');
+//passsing directoryPath and callback function
+fs.readdir(directoryPath, function (err, files) {
+    //handling error
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } 
+    //listing all files using forEach
+    files.forEach(function (file) {
+        // Do whatever you want to do with the file
+        console.log(file); 
+    });
+});
+    
+
+
     return transcription;
     
 }
