@@ -57,7 +57,7 @@ end_btn.onclick = function(){
         mic.stop();
 
         axios({
-            url:"/audio",
+            url:"/",
             method:"POST",
             data: fd
         }).then(
