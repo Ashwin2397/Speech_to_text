@@ -25,25 +25,24 @@ async function main(){
     // The transcribed audio
     var transcription;
     
-    //requiring path and fs modules
 
-console.log("BEFORE LINEAR16");
-//joining path of directory 
-let directoryPath = path.join(__dirname, 'public','uploads');
-//passsing directoryPath and callback function
-fs.readdir(directoryPath, function (err, files) {
-    //handling error
-    if (err) {
-        return console.log('Unable to scan directory: ' + err);
-    } 
-    //listing all files using forEach
-    files.forEach(function (file) {
-        // Do whatever you want to do with the file
-        console.log(file); 
+    /* DEBUGGING */
+    console.log("BEFORE LINEAR16");
+    //joining path of directory 
+    let directoryPath = path.join(__dirname, 'public','uploads');
+    //passsing directoryPath and callback function
+    fs.readdir(directoryPath, function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        } 
+        //listing all files using forEach
+        files.forEach(function (file) {
+            // Do whatever you want to do with the file
+            console.log(file); 
+        });
     });
-});
-    
-    // (async () => {
+        
     
     await linear16(path.join(__dirname,'public','uploads','blob.wav'), filename)
         .then(   async function(){
@@ -80,23 +79,23 @@ fs.readdir(directoryPath, function (err, files) {
            console.log("An error just occurred, either with google or with linear16 ");
         });
     
-    
-console.log("AFTER LINEAR16");
-//joining path of directory 
-directoryPath = path.join(__dirname, 'public','uploads');
-//passsing directoryPath and callback function
-fs.readdir(directoryPath, function (err, files) {
-    //handling error
-    if (err) {
-        return console.log('Unable to scan directory: ' + err);
-    } 
-    //listing all files using forEach
-    files.forEach(function (file) {
-        // Do whatever you want to do with the file
-        console.log(file); 
+    /* DEBUGGING */
+    console.log("AFTER LINEAR16");
+    //joining path of directory 
+    directoryPath = path.join(__dirname, 'public','uploads');
+    //passsing directoryPath and callback function
+    fs.readdir(directoryPath, function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        } 
+        //listing all files using forEach
+        files.forEach(function (file) {
+            // Do whatever you want to do with the file
+            console.log(file); 
+        });
     });
-});
-    
+        
 
 
     return transcription;
