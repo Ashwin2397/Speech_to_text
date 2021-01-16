@@ -62,7 +62,15 @@ end_btn.onclick = function(){
             url:"/",
             method:"POST",
             data: fd
-        });
+        })
+            .then(
+                res => {
+                    console.log(res);
+                    
+                    window.location.href = "/";
+                
+                });
+
 
         
 
