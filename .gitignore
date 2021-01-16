@@ -9,3 +9,4 @@ resources/
 
 # API keys
 .env
+.creds.json
