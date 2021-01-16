@@ -57,9 +57,7 @@ async function main(){
 
         })
         .catch((err)=>{
-            fs.writeFile('/app/public/uploads/mynewfile3.txt', 'Hello content!', function (e_err) {
-                console.log('Saved!');
-            });
+           console.log("An error just occurred, either with google or with linear16 ");
         });
         
     return transcription;
