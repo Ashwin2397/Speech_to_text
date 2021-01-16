@@ -44,23 +44,6 @@ app.get("/",function(req,res){
 
 });
 
-/* DEBUGGING */
-/* app.get("/audio",function(req,res){
-
-    res.render("redir");
-
-});
-
-
-
-app.post("/audio",upload.single('audio'),function(req,res){
-
-    res.status(200);
-
-}); */
-
-
-
 // To store uploads
 app.post("/",upload.single('audio'),function(req,res){
 
@@ -81,16 +64,13 @@ app.post("/",upload.single('audio'),function(req,res){
             
             console.log(transcript);
             
+            res.redirect("/");
         })
         
 
-    res.status(200);
     
     
 });
-
-var port = process.env.PORT || 1234,
-    host = process.env.IP || "localhost";   
 
 app.listen(process.env.PORT, function(){
 
