@@ -90,7 +90,7 @@ app.post("/",upload.single('audio'),function(req,res){
     
 });
 
-app.listen(1234, function(){
+app.listen(process.env.PORT, function(){
 
     console.log("[STARTING] Server is starting ...");
     console.log(`[LISTENING] Server is listening ...`);
