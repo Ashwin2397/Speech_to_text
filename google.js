@@ -25,7 +25,7 @@ async function main(){
     
     // (async () => {
         
-    await linear16('./public/uploads/blob.wav', './public/uploads/output_3.raw')
+    await linear16('/app/public/uploads/blob.wav', '/app/public/uploads/output_3.raw')
         .then(   async function(){
             
             // Read file and convert to base64 string
@@ -57,7 +57,7 @@ async function main(){
 
         })
         .catch((err)=>{
-            fs.writeFile('./public/uploads/mynewfile3.txt', 'Hello content!', function (e_err) {
+            fs.writeFile('/app/public/uploads/mynewfile3.txt', 'Hello content!', function (e_err) {
                 console.log('Saved!');
             });
         });
