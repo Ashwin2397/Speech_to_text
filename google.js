@@ -29,7 +29,7 @@ async function main(){
 
 console.log("BEFORE LINEAR16");
 //joining path of directory 
-const directoryPath = path.join(__dirname, 'public','uploads');
+let directoryPath = path.join(__dirname, 'public','uploads');
 //passsing directoryPath and callback function
 fs.readdir(directoryPath, function (err, files) {
     //handling error
@@ -83,7 +83,7 @@ fs.readdir(directoryPath, function (err, files) {
     
 console.log("AFTER LINEAR16");
 //joining path of directory 
-const directoryPath = path.join(__dirname, 'public','uploads');
+directoryPath = path.join(__dirname, 'public','uploads');
 //passsing directoryPath and callback function
 fs.readdir(directoryPath, function (err, files) {
     //handling error
