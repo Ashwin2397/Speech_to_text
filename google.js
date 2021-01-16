@@ -1,8 +1,10 @@
 var linear16 = require('linear16'), // Encodes supplied file to adhere to "LINEAR16" encoding
     dotenv   = require('dotenv').config(), 
     speech   = require('@google-cloud/speech'), // Imports the Google Cloud client library
+    path     = require('path'),
     {exit}   = require('process'),
     fs       = require('fs'); // File system module
+
 
     // if(process.env.NODE_ENV !== "production"){
 
@@ -14,7 +16,7 @@ async function main(){
     // Constants
     const sampleRateHertz = 16000,
           languageCode    = 'en-US',
-          filename        = `${__dirname}/public/uploads/output_3.raw`, //'Local path to audio file, e.g. /path/to/audio.raw';
+          filename        = path.join(__dirname,'public','uploads','output_3.raw'), //'Local path to audio file, e.g. /path/to/audio.raw';
           encoding        = 'LINEAR16';
     
     // Creates a client
@@ -23,10 +25,25 @@ async function main(){
     // The transcribed audio
     var transcription;
     
+//     //requiring path and fs modules
+// //joining path of directory 
+// const directoryPath = path.join(__dirname, 'Documents');
+// //passsing directoryPath and callback function
+// fs.readdir(directoryPath, function (err, files) {
+//     //handling error
+//     if (err) {
+//         return console.log('Unable to scan directory: ' + err);
+//     } 
+//     //listing all files using forEach
+//     files.forEach(function (file) {
+//         // Do whatever you want to do with the file
+//         console.log(file); 
+//     });
+// });
     
     // (async () => {
-        
-    await linear16(`${__dirname}/public/uploads/blob.wav`, filename)
+    
+    await linear16(path.join(__dirname,'public','uploads','blob.wav'), filename)
         .then(   async function(){
             
             // Read file and convert to base64 string
