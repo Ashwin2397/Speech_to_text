@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "google-auth-library": "^6.1.4",
     "linear16": "^1.2.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.14.1",
     "multer": "^1.4.2",
     "node-record-lpcm16": "^1.0.1",
     "recordrtc": "^5.6.1",
