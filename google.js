@@ -11,7 +11,7 @@ async function main(){
     // Constants
     const sampleRateHertz = 16000,
           languageCode    = 'en-US',
-          filename        = path.join(__dirname,'public','uploads','output_3.raw'), //'Local path to audio file, e.g. /path/to/audio.raw';
+          filename        = path.join(__dirname,'public','uploads','output.raw'), //'Local path to audio file, e.g. /path/to/audio.raw';
           encoding        = 'LINEAR16';
     
     // Creates a client
