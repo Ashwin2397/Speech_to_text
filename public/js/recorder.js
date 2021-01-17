@@ -52,7 +52,7 @@ document.querySelectorAll('.btn-stop-recording').forEach(item => {
             mic.stop();
 
             axios({
-                url:"/",
+                url: window.location.pathname,
                 method:"POST",
                 data: fd
             }).then(
