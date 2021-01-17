@@ -1,6 +1,7 @@
 var body_parser = require("body-parser"),
+    microsoft   = require("./microsoft"),
     express     = require("express"),
-    dotenv   = require('dotenv').config(), 
+    dotenv      = require('dotenv').config(), 
     google      = require('./google'),
     multer      = require('multer'),
     cors        = require('cors'), // Cross origin request support to allow axios
@@ -13,6 +14,7 @@ var body_parser = require("body-parser"),
 
 // Enable cors
 app.use(cors())
+
 
 // Configure multer
 const storage = multer.diskStorage({
@@ -59,8 +61,7 @@ app.get("/engine/google",function(req,res){
 });
 
 // To store uploads
-app.post("/",upload.single('audio'),function(req,res){
-
+app.post("/engine/google",upload.single('audio'),function(req,res){
 
     var get_transcript = async () =>{
 
@@ -72,25 +73,38 @@ app.post("/",upload.single('audio'),function(req,res){
     get_transcript()
         .then((transcript) => {
 
-            if(req.body.engine == "/engine/google"){
-
-                google_output = transcript;
-            }else{
-                microsoft_output = transcript;
-            }
             
+            google_output = transcript;
             console.log(transcript);
             
-
             res.redirect("/");
         })
-        
-
-    
-    
+   
 });
 
-app.listen(process.env.PORT, function(){
+app.post("/engine/microsoft",upload.single('audio'),function(req,res){
+
+    var get_transcript = async () =>{
+
+        var result = await microsoft();
+        return result;
+
+    }
+
+    get_transcript()
+        .then((transcript) => {
+
+            
+            microsoft_output = transcript;
+            console.log(transcript);
+            
+            res.redirect("/");
+        })
+            
+});
+
+
+app.listen(1234, function(){
 
     console.log("[STARTING] Server is starting ...");
     console.log(`[LISTENING] Server is listening ...`);
