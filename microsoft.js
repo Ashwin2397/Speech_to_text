@@ -1,13 +1,14 @@
 const { ConversationTranscriptionCanceledEventArgs } = require('microsoft-cognitiveservices-speech-sdk'),
       { TranscriptionServiceRecognizer }             = require('microsoft-cognitiveservices-speech-sdk/distrib/lib/src/common.speech/Exports'),
       linear16                                       = require('linear16'), // Encodes supplied file to adhere to "LINEAR16" encoding
+      dotenv                                         = require('dotenv').config(),
       path                                           = require("path"),
       sdk                                            = require("microsoft-cognitiveservices-speech-sdk"),
       fs                                             = require('fs');
       
 
 // Create a speech config object
-const speechConfig = sdk.SpeechConfig.fromSubscription("6876b4deab4e437ca215c41fb02825f4", "canadacentral");
+const speechConfig = sdk.SpeechConfig.fromSubscription(process.env.MICROSOFT_KEY, process.env.MICROSOFT_REGION);
 
 let file = path.join(__dirname,'public','uploads','output.raw');
 
