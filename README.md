@@ -9,3 +9,9 @@
 ### Goal
 * The goal is to eventually create a front-end speech-to-text component that is to be developed with VueJS
   * A good example might be a Voice Assistance widget like Siri or Google-Assistant
+
+### Demo Instructions
+* Select the speech-to-text engine of choice
+* Click on "Start recording" to begin transcription
+* Click on "Stop recording" to end sentence to be transcribed
+* The result of the transcription will be displayed below the "Transcription" header
